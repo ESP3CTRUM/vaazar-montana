@@ -6,9 +6,13 @@ import { useState } from 'react';
 export default function Page() {
     const [selectedCard, setSelectedCard] = useState<number | null>(null);
 
+    return (
+=======
     const handleCardClick = (cardNumber: number) => {
         setSelectedCard(selectedCard === cardNumber ? null : cardNumber);
     };
+
+    return (
 =======
     return (
         <div
