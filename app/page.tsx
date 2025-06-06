@@ -1,8 +1,15 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Page() {
+    const [selectedCard, setSelectedCard] = useState<number | null>(null);
+
+    const handleCardClick = (cardNumber: number) => {
+        setSelectedCard(selectedCard === cardNumber ? null : cardNumber);
+    };
+=======
     return (
         <div
             className="w-full min-h-screen flex flex-col bg-white dark:bg-black transition-colors duration-200"
@@ -53,40 +60,126 @@ export default function Page() {
                 key="olk-tusw"
             >
                 <div
-                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]"
+                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px] 
+                             transition-all duration-300 ease-in-out transform 
+                             hover:scale-105 hover:shadow-2xl hover:shadow-black/30 
+                             hover:bg-gray-500 dark:hover:bg-gray-600
+                             cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOCkiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNyA3TDE3IDE3TTcgMTdMNyA3SDE3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K'),_pointer]
+                             active:scale-95 relative overflow-hidden"
                     data-oid="6bange7"
                     key="olk-tSUE"
+                    onClick={() => handleCardClick(1)}
                 >
-                    <span className="text-white text-sm font-medium" data-oid="6ayah2g">
-                        Card 1
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="text-white text-sm font-medium relative z-10" data-oid="6ayah2g">
+                        {selectedCard === 1 ? 'Photo Gallery 1 - Click to close' : 'Photo 1'}
                     </span>
+                    {selectedCard === 1 && (
+                        <div className="absolute inset-2 bg-white/10 rounded border border-white/30 flex items-center justify-center">
+                            <span className="text-xs text-white/80">Photo content here</span>
+                        </div>
+                    )}
                 </div>
                 <div
-                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]"
+                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]
+                             transition-all duration-300 ease-in-out transform 
+                             hover:scale-105 hover:shadow-2xl hover:shadow-black/30 
+                             hover:bg-gray-500 dark:hover:bg-gray-600
+                             cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOCkiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNyA3TDE3IDE3TTcgMTdMNyA3SDE3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K'),_pointer]
+                             active:scale-95 relative overflow-hidden"
                     data-oid="crb9viq"
                     key="olk-sm-I"
+                    onClick={() => handleCardClick(2)}
                 >
-                    <span className="text-white text-sm font-medium" data-oid="2px9jl9">
-                        Card 2
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="text-white text-sm font-medium relative z-10" data-oid="2px9jl9">
+                        {selectedCard === 2 ? 'Photo Gallery 2 - Click to close' : 'Photo 2'}
                     </span>
+                    {selectedCard === 2 && (
+                        <div className="absolute inset-2 bg-white/10 rounded border border-white/30 flex items-center justify-center">
+                            <span className="text-xs text-white/80">Photo content here</span>
+                        </div>
+                    )}
                 </div>
                 <div
-                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]"
+                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]
+                             transition-all duration-300 ease-in-out transform 
+                             hover:scale-105 hover:shadow-2xl hover:shadow-black/30 
+                             hover:bg-gray-500 dark:hover:bg-gray-600
+                             cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOCkiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNyA3TDE3IDE3TTcgMTdMNyA3SDE3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K'),_pointer]
+                             active:scale-95 relative overflow-hidden"
                     data-oid="q-s44-n"
                     key="olk-8F9j"
+                    onClick={() => handleCardClick(3)}
                 >
-                    <span className="text-white text-sm font-medium" data-oid="cqm8g4r">
-                        Card 3
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="text-white text-sm font-medium relative z-10" data-oid="cqm8g4r">
+                        {selectedCard === 3 ? 'Photo Gallery 3 - Click to close' : 'Photo 3'}
                     </span>
+                    {selectedCard === 3 && (
+                        <div className="absolute inset-2 bg-white/10 rounded border border-white/30 flex items-center justify-center">
+                            <span className="text-xs text-white/80">Photo content here</span>
+                        </div>
+                    )}
                 </div>
                 <div
-                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]"
+                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]
+                             transition-all duration-300 ease-in-out transform 
+                             hover:scale-105 hover:shadow-2xl hover:shadow-black/30 
+                             hover:bg-gray-500 dark:hover:bg-gray-600
+                             cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOCkiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNyA3TDE3IDE3TTcgMTdMNyA3SDE3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K'),_pointer]
+                             active:scale-95 relative overflow-hidden"
                     data-oid="kmvdvsp"
                     key="olk-jpkn"
+                    onClick={() => handleCardClick(4)}
                 >
-                    <span className="text-white text-sm font-medium" data-oid="v.dic-j">
-                        Card 2
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="text-white text-sm font-medium relative z-10" data-oid="v.dic-j">
+                        {selectedCard === 4 ? 'Photo Gallery 4 - Click to close' : 'Photo 4'}
                     </span>
+                    {selectedCard === 4 && (
+                        <div className="absolute inset-2 bg-white/10 rounded border border-white/30 flex items-center justify-center">
+                            <span className="text-xs text-white/80">Photo content here</span>
+                        </div>
+                    )}
+                </div>
+                <div
+                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]
+                             transition-all duration-300 ease-in-out transform 
+                             hover:scale-105 hover:shadow-2xl hover:shadow-black/30 
+                             hover:bg-gray-500 dark:hover:bg-gray-600
+                             cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOCkiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNyA3TDE3IDE3TTcgMTdMNyA3SDE3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K'),_pointer]
+                             active:scale-95 relative overflow-hidden"
+                    onClick={() => handleCardClick(5)}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="text-white text-sm font-medium relative z-10">
+                        {selectedCard === 5 ? 'Photo Gallery 5 - Click to close' : 'Photo 5'}
+                    </span>
+                    {selectedCard === 5 && (
+                        <div className="absolute inset-2 bg-white/10 rounded border border-white/30 flex items-center justify-center">
+                            <span className="text-xs text-white/80">Photo content here</span>
+                        </div>
+                    )}
+                </div>
+                <div
+                    className="bg-gray-600 dark:bg-gray-700 rounded-lg flex items-center justify-center h-[188px]
+                             transition-all duration-300 ease-in-out transform 
+                             hover:scale-105 hover:shadow-2xl hover:shadow-black/30 
+                             hover:bg-gray-500 dark:hover:bg-gray-600
+                             cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOCkiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNyA3TDE3IDE3TTcgMTdMNyA3SDE3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi/+Cjwvc3ZnPgo8L3N2Zz4K'),_pointer]
+                             active:scale-95 relative overflow-hidden"
+                    onClick={() => handleCardClick(6)}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="text-white text-sm font-medium relative z-10">
+                        {selectedCard === 6 ? 'Photo Gallery 6 - Click to close' : 'Photo 6'}
+                    </span>
+                    {selectedCard === 6 && (
+                        <div className="absolute inset-2 bg-white/10 rounded border border-white/30 flex items-center justify-center">
+                            <span className="text-xs text-white/80">Photo content here</span>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
