@@ -50,6 +50,20 @@ export default function Page() {
                 </div>
             </div>
 
+            {/* Gallery Title Section */}
+            <div
+                className="px-4 mb-6 flex items-center justify-center"
+                data-oid="gallery-title-section"
+                key="olk-gallery-title"
+            >
+                <h2
+                    className="text-3xl md:text-4xl font-bold text-green-800 text-center font-aboreto"
+                    data-oid="4dtduxe"
+                >
+                    Galería de arte
+                </h2>
+            </div>
+
             {/* Grid Section */}
             <div
                 className="px-4 pb-4 h-[306px] grid grid-cols-[repeat(3,_1fr)] grid-rows-[repeat(2,_1fr)] pt-[16px] gap-[20px]"
@@ -106,7 +120,7 @@ export default function Page() {
                         src="/images/d-2.jpg"
                         alt="Photo 2"
                         fill
-                        className="object-cover rounded-md"
+                        className="object-cover rounded-md relative top-auto right-auto bottom-auto left-auto h-[fit-content] w-[200px]"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         data-oid="of0lg:j"
                     />
