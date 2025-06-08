@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en" data-oid="rfj11yx" className={`${aboreto.variable}`}>
-            <body className="" data-oid="agng9g3">
+        <html lang="en" className={`${aboreto.variable}`} data-oid="2h8y6:z">
+            <body className="" data-oid="rvvpr-i">
                 {children}
             </body>
         </html>
