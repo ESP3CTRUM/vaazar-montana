@@ -34,7 +34,7 @@ export default function Page() {
                 {/* Header Section - Dark Green */}
 
                 <div
-                    className="bg-[#E3F3FF] w-full sticky top-auto right-auto bottom-auto left-auto flex items-center gap-[30px] justify-end p-[30px] pt-[10px] pb-[10px] pr-[60px] h-[92px]"
+                    className="w-full sticky top-auto right-auto bottom-auto left-auto flex items-center gap-[30px] justify-end p-[30px] pt-[10px] pb-[10px] pr-[60px] h-[92px] bg-[#D0E0D6] opacity-[100%]"
                     data-oid="vy0ctti"
                     key="olk-pmbC"
                 >
@@ -89,12 +89,16 @@ export default function Page() {
                     </button>
                 </div>
                 <div
-                    id="inicio"
-                    className="bg-green-800 rounded-lg flex items-center justify-center h-[495px] w-[1630px] m-0"
+                    id="video-introduccion"
+                    className="bg-green-800 flex items-center justify-center h-[495px] m-0 w-full rounded-none border-[#00000000]"
                     data-oid="3tgdfl3"
                 >
                     <div className="text-center text-white p-4" data-oid="aaxs4:h" key="olk-xrYh">
-                        <h1 className="text-2xl md:text-3xl font-semibold mb-2" data-oid="8ybyz9r">
+                        <h1
+                            id="inicio"
+                            className="text-2xl md:text-3xl font-semibold mb-2"
+                            data-oid="8ybyz9r"
+                        >
                             Video de introducción
                         </h1>
                         <p className="text-lg opacity-90" data-oid="3g-5fm5">
@@ -107,7 +111,7 @@ export default function Page() {
 
                 <div
                     id="quienes-somos"
-                    className="flex-1 bg-green-200 mx-4 mb-4 min-h-96 flex items-center justify-center rounded-[8px] w-[1630px] h-[710px] mt-[16px]"
+                    className="flex-1 bg-green-200 mx-4 mb-4 min-h-96 flex items-center justify-center rounded-[8px] mt-[16px] h-[fit-content] w-[98%]"
                     data-oid="ihr2:vd"
                 >
                     <div
@@ -116,6 +120,7 @@ export default function Page() {
                         key="olk-A8cE"
                     >
                         <h1
+                            id="quienes-somos"
                             className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight"
                             data-oid="yeg9oh3"
                         >
@@ -133,6 +138,7 @@ export default function Page() {
                     data-oid="szr9i.o"
                 >
                     <h2
+                        id="galeria"
                         className="text-3xl md:text-4xl font-bold text-green-800 text-center font-aboreto"
                         data-oid="q6a1tc8"
                     >
@@ -142,8 +148,7 @@ export default function Page() {
 
                 {/* Grid Section */}
                 <div
-                    id="galeria"
-                    className="px-4 pb-4 h-[306px] grid grid-cols-[repeat(3,_1fr)] grid-rows-[repeat(2,_1fr)] pt-[16px] gap-[20px] w-full"
+                    className="px-4 pb-4 h-[306px] grid grid-cols-[repeat(3,_1fr)] grid-rows-[repeat(2,_1fr)] pt-[16px] gap-[20px] w-full m-[20px] mt-0 ml-0"
                     data-oid="az2nf5-"
                 >
                     <div
