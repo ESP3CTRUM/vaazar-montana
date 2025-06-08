@@ -15,6 +15,16 @@ export default function Page() {
         setModalOpen(null);
     };
 
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    };
+
     return (
         <>
             <div
@@ -28,42 +38,58 @@ export default function Page() {
                     data-oid="vy0ctti"
                     key="olk-pmbC"
                 >
-                    <div
-                        className="bg-[#707070] flex justify-center items-center rounded-[9px] h-[36px] w-[104px]"
+                    <button
+                        onClick={() => scrollToSection('inicio')}
+                        className="bg-[#707070] flex justify-center items-center rounded-[9px] h-[36px] w-[104px] 
+                                 transition-all duration-300 ease-in-out transform
+                                 hover:bg-green-600 hover:scale-105 hover:shadow-lg
+                                 active:scale-95 cursor-pointer"
                         data-oid="3s9hket"
                         key="olk-KxEC"
                     >
                         <p
-                            className="text-center w-[54px] text-[16px] rounded-none h-[26px]"
+                            className="text-center w-[54px] text-[16px] rounded-none h-[26px] text-white font-medium"
                             data-oid="uslub91"
                             key="olk-ZTeq"
                         >
-                            inicio
+                            Inicio
                         </p>
-                    </div>
-                    <div
-                        className="bg-[#707070] flex justify-center items-center rounded-[9px] w-[fit-content] h-[36px]"
+                    </button>
+                    <button
+                        onClick={() => scrollToSection('quienes-somos')}
+                        className="bg-[#707070] flex justify-center items-center rounded-[9px] w-[fit-content] h-[36px] px-4
+                                 transition-all duration-300 ease-in-out transform
+                                 hover:bg-green-600 hover:scale-105 hover:shadow-lg
+                                 active:scale-95 cursor-pointer"
                         data-oid="w-x.li9"
                         key="olk-ntt0"
                     >
                         <p
-                            className="text-center text-[16px] w-[146px] border-solid h-[25px]"
+                            className="text-center text-[16px] w-[146px] h-[25px] text-white font-medium"
                             data-oid="jum84gc"
                         >
                             Quienes somos
                         </p>
-                    </div>
-                    <div
-                        className="w-[104px] bg-[#707070] flex justify-center items-center rounded-[9px] h-[36px]"
+                    </button>
+                    <button
+                        onClick={() => scrollToSection('galeria')}
+                        className="w-[104px] bg-[#707070] flex justify-center items-center rounded-[9px] h-[36px]
+                                 transition-all duration-300 ease-in-out transform
+                                 hover:bg-green-600 hover:scale-105 hover:shadow-lg
+                                 active:scale-95 cursor-pointer"
                         data-oid="a:q4ty1"
                         key="olk-wTss"
                     >
-                        <p className="text-center w-[54px] text-[16px] h-[22px]" data-oid="cqrlo-6">
+                        <p
+                            className="text-center w-[54px] text-[16px] h-[22px] text-white font-medium"
+                            data-oid="cqrlo-6"
+                        >
                             Galería
                         </p>
-                    </div>
+                    </button>
                 </div>
                 <div
+                    id="inicio"
                     className="bg-green-800 rounded-lg flex items-center justify-center h-[495px] w-[1630px] m-0"
                     data-oid="3tgdfl3"
                 >
@@ -80,6 +106,7 @@ export default function Page() {
                 {/* Main Content Section - Light Green */}
 
                 <div
+                    id="quienes-somos"
                     className="flex-1 bg-green-200 mx-4 mb-4 min-h-96 flex items-center justify-center rounded-[8px] w-[1630px] h-[710px] mt-[16px]"
                     data-oid="ihr2:vd"
                 >
@@ -115,6 +142,7 @@ export default function Page() {
 
                 {/* Grid Section */}
                 <div
+                    id="galeria"
                     className="px-4 pb-4 h-[306px] grid grid-cols-[repeat(3,_1fr)] grid-rows-[repeat(2,_1fr)] pt-[16px] gap-[20px] w-full"
                     data-oid="az2nf5-"
                 >
